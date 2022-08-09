@@ -1,0 +1,43 @@
+* {
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.gradient-custom {
+    background: rgb(30,32,79);
+    background: linear-gradient(166deg, rgba(30,32,79,1) 24%, rgba(12,109,112,1) 49%, rgba(0,215,255,0.9948354341736695) 83%);
+
+    }
+
+
+
+
+    footer h5 {
+       
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+#logo{
+  
+    width: 70px;
+    height: 70px;
+    margin:20px;
+   
+}
+
+header{
+    display: flex;
+    margin-bottom: -50px;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+h1 {
+
+    color: rgb(105, 169, 252);
+    font-family: 'Inspiration', cursive;
+    font-size: 100px;
+    
+}
+
