@@ -1,406 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUELHAZI SHOP</title>
-    <link rel="icon" href ="https://upload.wikimedia.org/wikipedia/commons/0/07/Shopping_Cart_Flat_Icon_Vector.svg" type="image/x-icon"/>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>OUELHAZI SHOP</title>
+      <link rel="icon" href ="https://upload.wikimedia.org/wikipedia/commons/0/07/Shopping_Cart_Flat_Icon_Vector.svg" type="image/x-icon"/>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="./styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Roboto&display=swap" rel="stylesheet">
-   
-
-</head>
-<body class="gradient-custom">
-
-    <header >
-
-    
-    <img  id="logo" src="https://www.logolynx.com/images/logolynx/90/9094e804d914a07f974455189236caa6.png" width="50" height ="50" alt="companylogo"> 
-    <h1> Ouelhazi Shop</h1>
-</header>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+      <link href="./styles.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body class="gradient-custom">
+    <!-- Header : logo et titre -->
+    <header > 
+      <img  id="logo" src="https://www.logolynx.com/images/logolynx/90/9094e804d914a07f974455189236caa6.png" width="50" height ="50" alt="companylogo"> 
+      <h1> Ouelhazi Shop</h1>
+    </header>
     <section class="h-100 ">
-        <div class="container py-5">
-          <div class="row d-flex justify-content-center my-4">
-            <div class="col-md-8">
-              <div class="card mb-4">
-
-                <div class="card-header py-3">
-                  <h5 class="mb-0">OUELHAZI SHOP - This is your cart</h5>
-                </div>
-
-                <div class="card-body">
-                  <!-- Single item -->
-
-                  <div class=" row">
-                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                      <!-- Image -->
-                      <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                        <img src="https://www.usine23.com/img/prod/detail/64138_1.jpg"
-                          class="w-100" alt="Blue Jeans Jacket" />
+      <div class="container py-5">
+        <div class="row d-flex justify-content-center my-4">
+          <div class="col-md-11">
+            <div class="card mb-4">
+              <div class="card-header py-3">
+                <!-- indication utilisateur -->
+                <h5 class="mb-0">OUELHAZI SHOP - This is your cart</h5>
+              </div>
+              <!-- Présentation des produits/vitrine des pulls -->
+              <div class="card-body">
+                <div class=" row">
+                  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                    <!-- Image -->
+                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                      <img src="https://www.usine23.com/img/prod/detail/64138_1.jpg" class="w-100" alt="Blue Jeans Jacket" />
                         <a href="#!">
                           <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                         </a>
-                      </div>
-                      <!-- Image -->
-                    </div>
-      
-                    <div class="product col-lg-5 col-md-6 mb-4 mb-lg-0">
-                      <!-- Data -->
-                      <h3 class="productname">Maryoul asfer</h3>
-                      <p>Loun: asfer</p>
-                      <p>Size: S,M,L,XL and XXL </p>
-                      <p class="price">89.000</p>
-                      <button type="button" class="addtocart btn btn-primary btn-sm">
-                        7ot fil Sac
-                      </button>
-                      <!-- Price -->
-                      
-                    
-                      <!-- Price -->
-
-                      
-                      <button type="button" Id="trash" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                        title="Remove item">
-                        <i class="fa fa-trash"></i>
-                      </button>
-                      <button id ="likebut" type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                        title="Move to the wish list" onclick="ChangeClass('alb1')">
-                        <i id ="alb1" class="fa fa-heart-o"></i>
-                      </button>
-                      <!-- Data --> 
-
-                    </div>
-      
-                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                      
-                      <!-- Quantity -->
-                      <div class="d-flex mb-4" style="max-width: 300px">
-
-                        <button class="btn btn-dark px-3 me-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                          <i class="fa fa-minus"></i>
-                        </button>
-      
-                        <div class="form-outline">
-                          <input id="form1" min="1" name="quantity" value="1" type="number" class="form-control" />
-                          <label class="form-label" for="form1">Quantity</label>
-                        </div>
-      
-                        <button class="btn btn-dark px-3 ms-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                          <i class="fa fa-plus"></i>
-                        </button>
-
-                      </div>
-                      <!-- Quantity -->
-      
-                      
                     </div>
                   </div>
-                
-                  <!-- Single item -->
-      
-                  <hr class="my-4" />
-
-
-                  <div class=" row">
-                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                      <!-- Image -->
-                      <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-                          class="w-100" alt="Blue Jeans Jacket" />
-                        <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                        </a>
-                      </div>
-                      <!-- Image -->
-                    </div>
-      
-                    <div class="product col-lg-5 col-md-6 mb-4 mb-lg-0">
-                      <!-- Data -->
-                      <h3 class="productname">Maryoul azre9</h3>
-                      <p>Loun: Azre9</p>                      
-                      <p>Size: S,M,L,XL and XXL</p>
-                      <p class="price">59.000</p>
-                      <button type="button" class="addtocart btn btn-primary btn-sm">
-                        7ot fil Sac
-                      </button>
-
-                      <!-- Price -->
-                     
-                    
-                      <!-- Price -->
-
-                      
-                      <button type="button" Id="trash2" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                        title="Remove item">
-                        <i class="fa fa-trash"></i>
-                      </button>
-                      <button id ="likebut" type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                        title="Move to the wish list" onclick="ChangeClass('alb4')">
-                        <i id ="alb4" class="fa fa-heart-o"></i>
-                      </button>
-                      </button>
-                      <!-- Data -->
-                    </div>
-      
-                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                      <!-- Quantity -->
-                      <div class="d-flex mb-4" style="max-width: 300px">
-                        <button class="btn btn-dark px-3 me-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                          <i class="fa fa-minus"></i>
-                        </button>
-      
-                        <div class="form-outline">
-                          <input id="form2" min="1" name="quantity" value="1" type="number" class="form-control" />
-                          <label class="form-label" for="form1">Quantity</label>
-                        </div>
-      
-                        <button class="btn btn-dark px-3 ms-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                          <i class="fa fa-plus"></i>
-                        </button>
-                      </div>
-                      <!-- Quantity -->
-      
-                      
-                    </div>
-                  </div>
-                
-                  <!-- Single item -->
-      
-                  <hr class="my-4" />
-
-                  
-                  <div class=" row">
-                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                      <!-- Image -->
-                      <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                        <img src="https://images.vestiairecollective.com/cdn-cgi/image/w=224,h=224,q=80,f=auto,/produit/manteau-moncler-en-polyester-noir-24781299-1_5.jpg"
-                          class="w-100" alt="Blue Jeans Jacket" />
-                        <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                        </a>
-                      </div>
-                      <!-- Image -->
-                    </div>
-      
-                    <div class="product col-lg-5 col-md-6 mb-4 mb-lg-0">
-                      <!-- Data -->
-                      <h3 class="productname">Doudoune ak7el</h3>
-                      <p>Loun: Ak7el</p>
-                      <p>Size: S,M,L,XL and XXL</p>
-                      <p class="price">139.000</p>
-                      <button type="button" class="addtocart btn btn-primary btn-sm">
-                        7ot fil Sac
-                      </button>
-                      <!-- Price -->
-                      
-                    
-                      <!-- Price -->
-
-                      
-
-                      <button type="button" Id="trash3" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                        title="Remove item">
-                        <i class="fa fa-trash"></i>
-                      </button>
-                      <button id ="likebut" type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                      title="Move to the wish list" onclick="ChangeClass('alb2')">
-                      <i id ="alb2" class="fa fa-heart-o"></i>
+                  <!-- Description produit 1 -->
+                  <div class="product col-lg-5 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="productname" style="white-space: nowrap;" >Maryoul asfer</h5>
+                    TND<p class="price">50.000</p>
+                    <button class="btn btn-dark px-3 me-2"onclick="SubButt('Q1')">
+                    <i class="fa fa-minus"></i>
                     </button>
-                      <!-- Data -->
-                    </div>
-      
-                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                      <!-- Quantity -->
-                      <div class="d-flex mb-4" style="max-width: 300px">
-                        <button class="btn btn-dark px-3 me-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                          <i class="fa fa-minus"></i>
-                        </button>
-      
-                        <div class="form-outline">
-                          <input id="form3" min="1" name="quantity" value="1" type="number" class="form-control" />
-                          <label class="form-label" for="form1">Quantity</label>
-                        </div>
-      
-                        <button class="btn btn-dark px-3 ms-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                          <i class="fa fa-plus"></i>
-                        </button>
-                      </div>
-                      <!-- Quantity -->
-      
-                      
-                    </div>
+                    <p id = "Q1" class="quantity">1</p>          
+                    <!-- <label class="form-label">Quantité</label>     -->
+                    <button class="btn btn-dark px-3 ms-2" onclick="addButt('Q1')">
+                      <i class="fa fa-plus"></i>
+                    </button>                                       
+                    <button type="button" class="addtocart btn btn-primary">
+                      7ot fil Sac
+                    </button>  
+                    <button id ="likebut" type="button" class="btn btn-danger " data-mdb-toggle="tooltip"
+                      title="Move to the wish list" onclick="ChangeClass('alb1')">
+                      <i id ="alb1" class="fa fa-heart-o"></i>
+                    </button>
                   </div>
-                
-                  <!-- Single item -->
-      
-                  <hr class="my-4" />
-      
-                  <!-- Single item -->
-                  <div class="row">
-                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                      <!-- Image -->
-                      <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-                          class="w-100" />
+                </div>
+                <!-- Description produit 1 -->
+                <hr class="my-4" />
+                <div class=" row">
+                  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                    <!-- Image -->
+                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp" class="w-100" alt="Blue Jeans Jacket" />
                         <a href="#!">
                           <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                         </a>
-                      </div>
-                      <!-- Image -->
                     </div>
-      
-                    <div class="product col-lg-5 col-md-6 mb-4 mb-lg-0">
-                      <!-- Data -->
-                      <h3 class="productname">Capuche A7mer</h3>
-                      <p>Loun: a7mer</p>
-                      <p>Size: S,M,L,XL and XXL</p>
-                      <p class="price">119.000</p>
-                      <button type="button" class="addtocart btn btn-primary btn-sm">
-                        7ot fil Sac
-                      </button>
-                      <!-- Price -->
-                     
-                    
-                      <!-- Price -->
-                      
-      
-                      <button type="button" Id="trash4" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                        title="Remove item">
-                        <i class="fa fa-trash"></i>
-                      </button>
-                      <button id ="likebut" type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                        title="Move to the wish list" onclick="ChangeClass('alb3')">
-                        <i id ="alb3" class="fa fa-heart-o"></i>
-                      </button>
-                      <!-- Data -->
+                    <!-- Image -->
+                  </div>      
+                  <!-- Description produit 2 -->
+                  <div class="product col-lg-5 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="productname" style="white-space: nowrap;">Maryoul azre9</h5>
+                    TND<p class="price">60.000</p>
+                    <button class="btn btn-dark px-3 me-2" onclick="SubButt('Q2')"> <i class="fa fa-minus"></i></button>
+                    <p id = "Q2" class="quantity">1</p>          
+                    <!-- <label class="form-label">Quantité</label>     -->
+                    <button class="btn btn-dark px-3 ms-2" onclick="addButt('Q2')"> <i class="fa fa-plus"></i></button> 
+                    <button type="button" class="addtocart btn btn-primary "> 7ot fil Sac </button>
+                    <button id ="likebut" type="button" class="btn btn-danger " data-mdb-toggle="tooltip" title="Move to the wish list" onclick="ChangeClass('alb4')"> <i id ="alb4" class="fa fa-heart-o"></i> </button>
+                  </div>  
+                </div>
+                <!-- Description produit 2 -->
+                <hr class="my-4" />
+                <div class=" row">
+                  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                    <!-- Image -->
+                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                      <img src="https://images.vestiairecollective.com/cdn-cgi/image/w=224,h=224,q=80,f=auto,/produit/manteau-moncler-en-polyester-noir-24781299-1_5.jpg"
+                        class="w-100" alt="Blue Jeans Jacket" />
+                      <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                      </a>
                     </div>
-
-                   
-      
-                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                      <!-- Quantity -->
-                      <div class="d-flex mb-4" style="max-width: 300px">
-                        <button class="btn btn-dark px-3 me-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                          <i class="fa fa-minus"></i>
-                        </button>
-      
-                        <div class="form-outline">
-                          <input id="form4" min="1" name="quantity" value="1" type="number" class="form-control" />
-                          <label class="form-label" for="form1">Quantity</label>
-                        </div>
-      
-                        <button class="btn btn-dark px-3 ms-2"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                          <i class="fa fa-plus"></i>
-                        </button>
-                      </div>
-                      <!-- Quantity -->
-      
-                  
-                    </div>
+                        <!-- Image -->
                   </div>
-
-                  
-                  <!-- Single item -->
+                  <!-- Description produit 3 -->      
+                  <div class="product col-lg-5 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="productname" style="white-space: nowrap;">Doudoune ak7el</h5>
+                    TND<p class="price">139.000</p>
+                    <button class="btn btn-dark px-3 me-2" onclick="SubButt('Q3')">
+                      <i class="fa fa-minus"></i>
+                    </button>
+                    <p id = "Q3" class="quantity">1</p>          
+                    <!-- <label class="form-label">Quantité</label>     -->
+                    <button class="btn btn-dark px-3 ms-2" onclick="addButt('Q3')">
+                      <i class="fa fa-plus"></i>
+                    </button>      
+                    <button type="button" class="addtocart btn btn-primary ">
+                      7ot fil Sac
+                    </button>
+                    <button id ="likebut" type="button" class="btn btn-danger " data-mdb-toggle="tooltip"
+                    title="Move to the wish list" onclick="ChangeClass('alb2')">
+                    <i id ="alb2" class="fa fa-heart-o"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- Description produit 3 --> 
+                <hr class="my-4" />
+                <div class="row">
+                  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                    <!-- Image -->
+                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+                        class="w-100" />
+                      <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                      </a>
+                    </div>
+                    <!-- Image -->
+                  </div>
+                  <div class="product col-lg-5 col-md-6 mb-4 mb-lg-0">
+                    <!-- Data -->
+                    <h5 class="productname" style="white-space: nowrap;">Capuche A7mer</h5>
+                    TND<p class="price">119.000</p>
+                    <button class="btn btn-dark px-3 me-2" onclick="SubButt('Q4')">
+                      <i class="fa fa-minus"></i>
+                    </button>
+                    <p id = "Q4" class="quantity">1</p>          
+                    <!-- <label class="form-label">Quantité</label>     -->
+                    <button class="btn btn-dark px-3 ms-2" onclick="addButt('Q4')">
+                      <i class="fa fa-plus"></i>
+                    </button> 
+                    <button type="button" class="addtocart btn btn-primary ">
+                    7ot fil Sac
+                    </button>           
+                    <button id ="likebut" type="button" class="btn btn-danger " data-mdb-toggle="tooltip"
+                      title="Move to the wish list" onclick="ChangeClass('alb3')">
+                      <i id ="alb3" class="fa fa-heart-o"></i>
+                    </button>
+                  </div>                 
                 </div>
               </div>
-              
             </div>
-            
-            <div class="col-md-4">
-              <div class="card mb-4">
-
+          </div>              
+        </div> 
+        <div class="row d-flex justify-content-center my-4 ">
+          <div class="col-md-11">
+            <div class="card md-11">
                 <div class="card-header py-3">
                   <h5 class="mb-0">El fatoura</h5>
                 </div>
-
-
-                
-                <div class="card-body">
-
-                  <div id="alerts"></div>
-
-                  <div class="cart-container">
-          
-                <table>
-                  <thead>
-                    <tr>
-                    
-                    <th><strong>Product</strong></th>
-                    <th><strong>Soumou</strong></th>
-                    </div>
-            </tr>
-            </thead>
-            <tbody id="carttable"></tbody>
-          </table>
-
-          <hr>
-
-          <table id="carttotals">
-            
-           
-            
-          </table>
-
-
-            <tr>
-              
-            
-          
-        </div>
-
-                  <ul class="list-group list-group-flush">
-                    
-                   
-                    <li
-                      class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                      <div>
-                        <strong>Total 7esba</strong>
-                        <strong>
-                          <p class="mb-0">(m3ah TVA)</p>
-                        </strong>
-                      </div>
-                      <span id="total">TND<strong>188.000</strong></span>
-                    </li>
-                  </ul>
-
-                  <button id="emptycart" class="btn btn-danger btn-sm">Fare8 l 9offa</button>
-      
-                  <button type="button" class="btn btn-primary btn-sm">
-                    Echri terba7
-                  </button>
-
-                 
-          
+              <div class="card-body">
+                <div class="cart-container">
+                  <table style="width: 100%;">
+                    <thead>
+                      <tr>
+                        <th><strong>Qty</strong></th>
+                        <th><strong>Product</strong></th>
+                        <th><strong>Soumou</strong></th>
+                      </tr>
+                    </thead>
+                    <tbody id="carttable"></tbody>
+                  </table>
                 </div>
+                <hr>
+                <table id="carttotals"> </table>
+                <tr>
               </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                  <div>
+                    <strong style=" padding: 20px;" >Total 7esba (M3ah TVA) </strong>
+                    
+                  </div>
+                  <span id="total" style=" padding: 0 0px 0 385px;"><strong>0.000</strong></span>  TND
+                </li>
+              </ul>
+              <div class="buttons d-flex"> 
+                <button type="button" class="btn btn-primary " onclick="alert('Nchalah mabroukin alik w mar7bé bik !! t7eb ta3mel carte fidélité ?')">
+                  Echri terba7
+                </button>
+                <button type="button" id="trash" class="btn btn-primary " data-mdb-toggle="tooltip" title="Remove item">
+                  <i class="fa fa-trash"></i>
+                </button>  
+              </div>
+
             </div>
           </div>
         </div>
-      </section>
-      <footer id="sm-footer">
-       
-         <!-- author footer -->
-
-        <h5 class="copyrights"> © 2022 Wassim Ouelhazi - All Rights reserved. </h5>
-       </footer>
-
-       <script src="./script.js"></script>
-</body>
-
+      </div>
+    </section>
+    <footer id="sm-footer">
+      <h5 class="copyrights"> © 2022 Wassim Ouelhazi - All Rights reserved. </h5>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
 </html>

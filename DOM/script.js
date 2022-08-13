@@ -2,12 +2,9 @@
  updateCartTotal();
 
 /* button event listeners */
-document.getElementById("emptycart").addEventListener("click", emptyCart);
+document.getElementById("trash").addEventListener("click", emptyCart);
 
-document.getElementById("trash").addEventListener("click", RemovefromCart);
-document.getElementById("trash2").addEventListener("click", RemovefromCart2);
-document.getElementById("trash3").addEventListener("click", RemovefromCart3);
-document.getElementById("trash4").addEventListener("click", RemovefromCart4);
+
 
 var btns = document.getElementsByClassName('addtocart');
 for (var i = 0; i < btns.length; i++) {
@@ -23,26 +20,33 @@ function addToCart(elem) {
     var getproductName;
     var cart = [];
      var stringCart;
+     var getquantity;
+
     //cycles siblings for product info near the add button
     while(elem = elem.previousSibling) {
-        if (elem.nodeType === 3) continue; // text node
+        if (elem.nodeType === 20) continue; // text node
         if(elem.className == "price"){
             getprice = elem.innerText;
         }
         if (elem.className == "productname") {
             getproductName = elem.innerText;
         }
+        if (elem.className == "quantity") {
+            getquantity = elem.innerText;
+        }
         sibs.push(elem);
+
+        console.log(elem)
        
-        
     }
-    console.log("messsage:",getprice);
+    
 
 
     //create product object
     var product = {
         productname : getproductName,
-        price : getprice
+        price : getprice,
+        quantity : getquantity
     };
     //convert product data to JSON for storage
     var stringProduct = JSON.stringify(product);
@@ -55,7 +59,8 @@ function addToCart(elem) {
         stringCart = JSON.stringify(cart);
         //create session storage cart item
         sessionStorage.setItem('cart', stringCart);
-        addedToCart(getproductName);
+       
+        
         updateCartTotal();
     }
     else {
@@ -67,7 +72,7 @@ function addToCart(elem) {
         stringCart = JSON.stringify(cart);
         //overwrite cart data in sessionstorage 
         sessionStorage.setItem('cart', stringCart);
-        addedToCart(getproductName);
+       
         updateCartTotal();
     }
 
@@ -81,55 +86,51 @@ function updateCartTotal(){
     var items = 0;
     var productname = "";
     var carttable = "";
-    
+    var quantity;
+  
+       
     if(sessionStorage.getItem('cart')) {
         //get cart data & parse to array
         var cart = JSON.parse(sessionStorage.getItem('cart'));
         //get no of items in cart 
         items = cart.length;
-
-        
+                 
         //loop over cart array
-        for (var i = 0; i < 1; i++){
-
-            var Qty = document.getElementById("form1").value;
-
-            //convert each JSON product in array back into object
-            var x = JSON.parse(cart[i]);
-           
-                if (x.productname!==productname) {
-                //get property value of price
-                price = parseFloat(x.price * Qty) ;                      
-                productname = x.productname;
-                
-                //add price to total
-                total += price;
-                carttable += "<tr><td>" + productname + "</td><td> TND " + price.toFixed(3) + "</td></tr>";
+        
+        for (var i = 0; i < items; i++){ 
             
-            }
-        }
+            //convert each JSON product in array back into object
+                  
+                var x = JSON.parse(cart[i]);
+               
+                //convert each JSON product in array back into object    
+                productname = x.productname;  
+                quantity=x.quantity             
+                price = parseFloat(x.price * quantity) ;     
+                             
+                total += price;
+
+
+
+                carttable += "<tr><td>" + quantity  + "</td><td>  " +productname + "</td><td>  " + price.toFixed(3) + " TND </td><td>  " + "</td></tr>" ;
+
+                }
+   
+        }  
+
         
-      
+
+
+        document.getElementById("total").innerHTML = total.toFixed(3);
+        //insert saved products to cart table
+        document.getElementById("carttable").innerHTML = carttable;
         
-        
-    }
+    
     //update total on website HTML
-    document.getElementById("total").innerHTML = total.toFixed(3);
-    //insert saved products to cart table
-    document.getElementById("carttable").innerHTML = carttable;
+    
    
 }
-//user feedback on successful add
-function addedToCart(pname) {
 
-    var Qty = document.getElementById("form1").value;
-  var message =  + pname + " was added to the cart";
-  var alerts = document.getElementById("alerts");
-  alerts.innerHTML = message;
-  if(!alerts.classList.contains("message")){
-     alerts.classList.add("message");
-  }
-}
 /* User Manually empty cart */
 function emptyCart() {
     //remove cart session storage object & refresh cart totals
@@ -160,48 +161,7 @@ function RemovefromCart() {
     }
 }
 
-function RemovefromCart2() {
-    //remove cart session storage object & refresh cart totals
-    if(sessionStorage.getItem('cart')){
-        sessionStorage.removeItem('cart');
-        updateCartTotal();
-      //clear message and remove class style
-      var alerts = document.getElementById("alerts");
-      alerts.innerHTML = "";
-      if(alerts.classList.contains("message")){
-          alerts.classList.remove("message");
-      }
-    }
-}
 
-function RemovefromCart3() {
-    //remove cart session storage object & refresh cart totals
-    if(sessionStorage.getItem('cart')){
-        sessionStorage.removeItem('cart');
-        updateCartTotal();
-      //clear message and remove class style
-      var alerts = document.getElementById("alerts");
-      alerts.innerHTML = "";
-      if(alerts.classList.contains("message")){
-          alerts.classList.remove("message");
-      }
-    }
-}
-
-
-function RemovefromCart4() {
-    //remove cart session storage object & refresh cart totals
-    if(sessionStorage.getItem('cart')){
-        sessionStorage.removeItem('cart');
-        updateCartTotal();
-      //clear message and remove class style
-      var alerts = document.getElementById("alerts");
-      alerts.innerHTML = "";
-      if(alerts.classList.contains("message")){
-          alerts.classList.remove("message");
-      }
-    }
-}
 
 
 function ChangeClass(id) {
@@ -211,19 +171,38 @@ if  (elem.classList.contains("fa-heart-o"))
 {
     elem.classList.remove("fa-heart-o");
     elem.classList.add("fa-heart");
+    alert("item moved to wish list")
 
 } else { 
     
     elem.classList.remove("fa-heart");
     elem.classList.add("fa-heart-o");
+    alert("item removed from wish list")
     }
 
 }
 
+function addButt(id) {
 
+    var elem=parent.document.getElementById(id);
+    
+    
+   
+    
+        elem.innerHTML++;
+        
+  
+    
 
+}
 
+function SubButt(id) {
 
-
-
- 
+    var elem=parent.document.getElementById(id);
+    
+    if(elem.innerHTML>=1){
+    
+    elem.innerHTML--;
+    
+   
+    }}

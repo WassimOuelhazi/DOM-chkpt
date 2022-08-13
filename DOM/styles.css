@@ -35,9 +35,98 @@ header{
 }
 h1 {
 
-    color: rgb(105, 169, 252);
+    color: rgb(133, 225, 228);
     font-family: 'Inspiration', cursive;
     font-size: 100px;
     
 }
 
+.product.col-lg-5.col-md-6.mb-4.mb-lg-0 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h5.productname {
+    width: 5000;
+    margin: 0 30px 0 0;
+}
+
+p.price {
+    
+    margin: 0 50px 0 0;
+}
+
+
+
+
+button.addtocart.btn.btn-primary {
+    white-space: nowrap;
+   
+   
+}
+
+
+button.addtocart.btn.btn-primary {
+    margin: 0 30px;
+}
+
+#Q1 {
+    margin: 0 10px;
+    border: #0210104f;
+    border-style: solid;
+    border-width: 0.1px;
+    border-radius: 10px;
+    padding: 8px 40px;
+}
+
+#Q2 {
+    margin: 0 10px;
+    border: #0210104f;
+    border-style: solid;
+    border-width: 0.1px;
+    border-radius: 10px;
+    padding: 8px 40px;
+}
+
+#Q3 {
+    margin: 0 10px;
+    border: #0210104f;
+    border-style: solid;
+    border-width: 0.1px;
+    border-radius: 10px;
+    padding: 8px 40px;
+}
+
+#Q4 {
+    margin: 0 10px;
+    border: #0210104f;
+    border-style: solid;
+    border-width: 0.1px;
+    border-radius: 10px;
+    padding: 8px 40px;
+}
+
+ul.list-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    border: 0.2;
+    opacity: .25;
+    
+}
+
+.buttons{
+
+    justify-content: flex-end;
+}
+
+button.btn.btn-primary {
+    margin: 20px;
+}
