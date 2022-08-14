@@ -19,12 +19,15 @@ function addToCart(elem) {
     var getprice;
     var getproductName;
     var cart = [];
-     var stringCart;
-     var getquantity;
+    var stringCart;
+    var getquantity;
+    var getimagesource;
+
+ 
 
     //cycles siblings for product info near the add button
     while(elem = elem.previousSibling) {
-        if (elem.nodeType === 20) continue; // text node
+        if (elem.nodeType === 3) continue; // text node
         if(elem.className == "price"){
             getprice = elem.innerText;
         }
@@ -34,11 +37,19 @@ function addToCart(elem) {
         if (elem.className == "quantity") {
             getquantity = elem.innerText;
         }
-        sibs.push(elem);
+        if (elem.className == "ProdDesc") {
+            getimagesource = elem.outerHTML;
+        }
 
-        console.log(elem)
-       
+        
+        sibs.push(elem);
+  
+      
     }
+  
+
+       
+   
     
 
 
@@ -46,7 +57,8 @@ function addToCart(elem) {
     var product = {
         productname : getproductName,
         price : getprice,
-        quantity : getquantity
+        quantity : getquantity,
+        img : getimagesource
     };
     //convert product data to JSON for storage
     var stringProduct = JSON.stringify(product);
@@ -87,6 +99,21 @@ function updateCartTotal(){
     var productname = "";
     var carttable = "";
     var quantity;
+    var imagetab;
+
+        // image construct
+
+    // const image = document.createElement('img');
+    // image.setAttribute('src','https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp',);
+    // image.setAttribute('alt', 'article');
+    // image.setAttribute('height', 50); // 👈️ height in px
+    // image.setAttribute('width', 50); // 👈️ width in px
+    // image.setAttribute('id', 'imagetab')
+
+    // console.log();
+
+
+   
   
        
     if(sessionStorage.getItem('cart')) {
@@ -94,36 +121,52 @@ function updateCartTotal(){
         var cart = JSON.parse(sessionStorage.getItem('cart'));
         //get no of items in cart 
         items = cart.length;
-                 
+    
+        
         //loop over cart array
         
         for (var i = 0; i < items; i++){ 
             
-            //convert each JSON product in array back into object
-                  
-                var x = JSON.parse(cart[i]);
-               
-                //convert each JSON product in array back into object    
-                productname = x.productname;  
-                quantity=x.quantity             
-                price = parseFloat(x.price * quantity) ;     
-                             
-                total += price;
+            //convert each JSON product in array back into object                     
+            var x = JSON.parse(cart[i]);       
 
+            //convert each JSON product in array back into object    
+            productname = x.productname;  
+            quantity=x.quantity;
+            price = parseFloat(x.price * quantity) ;   
 
+            var imagetab = x.img;
 
-                carttable += "<tr><td>" + quantity  + "</td><td>  " +productname + "</td><td>  " + price.toFixed(3) + " TND </td><td>  " + "</td></tr>" ;
+            // modification de la taille de limage
+            
+            var ImgWidthEdit= imagetab.replace ("200","50")
+            
 
-                }
-   
+            total += price;
+            carttable += "<tr><td>" + quantity + "</td><td>"+ ImgWidthEdit + "</td><td>"  + productname + "</td><td>"  + price.toFixed(3) + "TND</td></tr>";
+            
+            
+        }
+
+        alert(` Mabrouk!!  ${quantity}  ${productname} t7at fil sac`)
         }  
-
-        
-
 
         document.getElementById("total").innerHTML = total.toFixed(3);
         //insert saved products to cart table
         document.getElementById("carttable").innerHTML = carttable;
+       
+        
+
+
+    
+
+        
+  
+       
+       
+
+
+        
         
     
     //update total on website HTML
@@ -137,29 +180,20 @@ function emptyCart() {
     if(sessionStorage.getItem('cart')){
         sessionStorage.removeItem('cart');
         updateCartTotal();
+   
+
       //clear message and remove class style
       var alerts = document.getElementById("alerts");
       alerts.innerHTML = "";
       if(alerts.classList.contains("message")){
           alerts.classList.remove("message");
       }
+      
     }
 }
 
-/* User Manually empty cart */
-function RemovefromCart() {
-    //remove cart session storage object & refresh cart totals
-    if(sessionStorage.getItem('cart')){
-        sessionStorage.removeItem('cart');
-        updateCartTotal();
-      //clear message and remove class style
-      var alerts = document.getElementById("alerts");
-      alerts.innerHTML = "";
-      if(alerts.classList.contains("message")){
-          alerts.classList.remove("message");
-      }
-    }
-}
+
+
 
 
 
