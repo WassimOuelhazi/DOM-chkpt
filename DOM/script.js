@@ -23,7 +23,7 @@ function addToCart(elem) {
     var getquantity;
     var getimagesource;
 
- 
+    
 
     //cycles siblings for product info near the add button
     while(elem = elem.previousSibling) {
@@ -43,14 +43,11 @@ function addToCart(elem) {
 
         
         sibs.push(elem);
+       
   
       
     }
   
-
-       
-   
-    
 
 
     //create product object
@@ -87,6 +84,16 @@ function addToCart(elem) {
        
         updateCartTotal();
     }
+    window.scrollTo(0,document.body.scrollHeight);
+   
+
+
+
+    
+
+   
+
+
 
     
 }
@@ -99,76 +106,53 @@ function updateCartTotal(){
     var productname = "";
     var carttable = "";
     var quantity;
-    var imagetab;
-
-        // image construct
-
-    // const image = document.createElement('img');
-    // image.setAttribute('src','https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp',);
-    // image.setAttribute('alt', 'article');
-    // image.setAttribute('height', 50); // 👈️ height in px
-    // image.setAttribute('width', 50); // 👈️ width in px
-    // image.setAttribute('id', 'imagetab')
-
-    // console.log();
-
-
-   
-  
+    var imagetab;  
+    var array= [];
        
     if(sessionStorage.getItem('cart')) {
         //get cart data & parse to array
         var cart = JSON.parse(sessionStorage.getItem('cart'));
         //get no of items in cart 
         items = cart.length;
-    
-        
+       
         //loop over cart array
+       
         
         for (var i = 0; i < items; i++){ 
             
+            
             //convert each JSON product in array back into object                     
-            var x = JSON.parse(cart[i]);       
-
+            var x = JSON.parse(cart[i]);
+            var y = array.find((el) => el.productname == x.productname);
+            array.push(x);
+   
             //convert each JSON product in array back into object    
-            productname = x.productname;  
+            productname = x.productname;      
             quantity=x.quantity;
             price = parseFloat(x.price * quantity) ;   
-
             var imagetab = x.img;
-
             // modification de la taille de limage
-            
             var ImgWidthEdit= imagetab.replace ("200","50")
-            
 
+                 
+            if(y==undefined ) {
             total += price;
             carttable += "<tr><td>" + quantity + "</td><td>"+ ImgWidthEdit + "</td><td>"  + productname + "</td><td>"  + price.toFixed(3) + "TND</td></tr>";
+            }
             
-            
+        }   
+
+        if(y!==undefined ) { 
+            alert("item already added to the cart !! ");
+          exit;
         }
-
-        alert(` Mabrouk!!  ${quantity}  ${productname} t7at fil sac`)
-        }  
-
+                     
+    }           
+       
         document.getElementById("total").innerHTML = total.toFixed(3);
         //insert saved products to cart table
         document.getElementById("carttable").innerHTML = carttable;
-       
-        
 
-
-    
-
-        
-  
-       
-       
-
-
-        
-        
-    
     //update total on website HTML
     
    
@@ -179,15 +163,11 @@ function emptyCart() {
     //remove cart session storage object & refresh cart totals
     if(sessionStorage.getItem('cart')){
         sessionStorage.removeItem('cart');
+        console.log(sessionStorage.getItem('cart'))
         updateCartTotal();
    
 
-      //clear message and remove class style
-      var alerts = document.getElementById("alerts");
-      alerts.innerHTML = "";
-      if(alerts.classList.contains("message")){
-          alerts.classList.remove("message");
-      }
+   
       
     }
 }
